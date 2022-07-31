@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+</head>
+<body>
+	<table>
+    <tr>
+    	<td>Pakistani Food: <i>400/RS</i></td>
+        <td><input type="checkbox" id="basic_single" name="basic_single" value="400"></td>
+    </tr>
+    <tr>
+    	<td>Chiness Food: <i>500/RS</i></td>
+    	<td><input type="checkbox" id="basic_double" name="basic_double" value="500"></td>
+    </tr>
+    <tr>
+    	<td>Thai Food:  <i>450/RS</i></td>
+    	<td><input type="checkbox" id="basic_double" name="basic_double" value="450"></td>
+    </tr>
+    <tr>
+    	<td> Live B.B.Q:  <i>280/RS</i></td>
+    	<td><input type="checkbox" id="basic_double" name="basic_double" value="280"></td>
+    </tr>
+    <tr>
+    	<td>Appetizers:  <i>235/RS</i></td>
+    	<td><input type="checkbox" id="basic_double" name="basic_double" value="235"></td>
+    </tr>
+    <tr>
+    	<td><input id="total"></td>
+        <td>Total:</td>
+    </tr>
+</table>
+<script>
+$('input:checkbox').change(function (){
+      var total = 0;
+      $('input:checkbox:checked').each(function(){
+       total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+      });   
+      $("#total").val(total);
+});
+</script>
+</body>
+</html>
